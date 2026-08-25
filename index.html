@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Support</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #d2d2d7;
+            margin-bottom: 30px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .apple-logo-icon {
+            width: 22px;
+            height: 26px;
+            margin-right: 8px;
+            fill: #1d1d1f;
+        }
+
+        .header-right a {
+            display: flex;
+            align-items: center;
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 12px;
+            border: 1px solid #d2d2d7;
+            border-radius: 20px;
+            background-color: #f5f5f7;
+        }
+
+        .phone-icon {
+            width: 14px;
+            height: 14px;
+            margin-right: 6px;
+            fill: #0066cc;
+        }
+
+        .contact-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-section p {
+            font-size: 17px;
+            line-height: 1.47;
+            color: #6e6e73;
+            margin: 0 0 30px 0;
+            padding: 0 20px;
+        }
+
+        .call-now-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            padding: 14px 24px;
+            border: 2px solid #0066cc;
+            border-radius: 12px;
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .call-now-btn .phone-icon {
+            width: 17px;
+            height: 17px;
+            margin-right: 8px;
+        }
+
+        .support-options {
+            margin-bottom: 60px;
+        }
+
+        .option-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .option-icon {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 15px;
+            fill: #424245;
+        }
+
+        .option-item h3 {
+            font-size: 21px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.2px;
+        }
+
+        .option-item p {
+            font-size: 17px;
+            line-height: 1.47;
+            color: #6e6e73;
+            margin: 0 0 10px 0;
+            padding: 0 10px;
+        }
+
+        .option-item a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .option-item a::after {
+            content: ' ›';
+            font-weight: bold;
+        }
+
+        .online-support {
+            border-top: 1px solid #d2d2d7;
+            padding-top: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .online-support h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .online-support p {
+            font-size: 17px;
+            line-height: 1.47;
+            color: #1d1d1f;
+            margin: 0 0 30px 0;
+            padding: 0 20px;
+        }
+
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .device-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #1d1d1f;
+        }
+
+        .device-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .device-item p {
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #6e6e73;
+            margin-top: auto;
+            padding: 20px;
+            border-top: 1px solid #d2d2d7;
+            background-color: #f5f5f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-phone-link {
+            display: flex;
+            align-items: center;
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer-phone-link .phone-icon {
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            fill: #0066cc;
+        }
+
+        @media (min-width: 768px) {
+            .device-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+      <header>
+        <div class="header-left">
+          <!-- Fixed Apple Logo SVG viewBox -->
+          <svg class="apple-logo-icon" viewBox="0 0 814 1000" xmlns="http://www.w3.org/2000/svg">
+            <path d="M788.1 340.9c-5.8 4.5-108.2 62.8-108.2 188.2 0 144.3 125.3 195.8 130.4 197.7-1 3.4-20.2 69.5-66.2 136-40 58.5-81.5 117-145.3 117-62.8 0-83-36.5-155.5-36.5-73.5 0-96.5 35.5-154.5 36.5-60 1-105.5-63.5-145.5-122-79.5-115.5-140-327.5-60-474 40-73 112.5-119 191-120.5 59.5-1.5 115.5 40 152.5 40 36.5 0 102.5-49.5 173-42 29.5 1.2 112.5 12 165.5 89.5-3.8 2.2-98.5 57.5-97.3 175.8zM576.4 163.5c31.5-38.2 52.8-91.5 47-144.5-45.5 2-101 30.5-133.5 68.5-29 34-54.5 88-48.5 140.5 51 4 103.5-25 135-64.5z"/>
+          </svg>
+          Apple Support
+        </div>
+        <div class="header-right">
+          <a href="about:invalid#zCSafez">
+            <svg class="phone-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Call our team +1 (855) 470-4290
+          </a>
+        </div>
+      </header>
+
+      <div class="contact-section">
+        <h1>Contact Apple Support</h1>
+        <p>Need assistance with your Apple devices or services? You've come to the right place to find solutions, resolve issues, or get in touch with live support.</p>
+        <a href="about:invalid#zCSafez" class="call-now-btn">
+          <svg class="phone-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call Now: +1 (855) 470-4290
+        </a>
+      </div>
+
+      <div class="support-options">
+        <div class="option-item">
+          <svg class="option-icon" viewBox="0 0 24 24"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/></svg>
+          <h3>Forgot your password?</h3>
+          <p>Regain access to your Apple Account if you've forgotten your password.</p>
+          <a href="about:invalid#zCSafez">Reset your password</a>
+        </div>
+
+        <div class="option-item">
+          <svg class="option-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+          <h3>Request a refund</h3>
+          <p>Find out if your purchase qualifies for a refund from the App Store, iTunes Store, or Apple Books.</p>
+          <a href="about:invalid#zCSafez">Start a refund request</a>
+        </div>
+
+        <div class="option-item">
+          <svg class="option-icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v-2zm-3-5V3.5L18.5 9H13z"/></svg>
+          <h3>Change your subscription</h3>
+          <p>Update, cancel, or manage any subscription from your list.</p>
+          <a href="about:invalid#zCSafez">View your subscriptions</a>
+        </div>
+
+        <div class="option-item">
+          <svg class="option-icon" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          <h3>Media &amp; purchases disabled</h3>
+          <p>To restore your account access, simply provide a few required details.</p>
+          <a href="about:invalid#zCSafez">Request reactivation</a>
+        </div>
+      </div>
+
+      <div class="online-support">
+        <h2>Get online support</h2>
+        <p>Tell us more about your device and we'll guide you to a solution.</p>
+        <div class="device-grid">
+          <a href="about:invalid#zCSafez" class="device-item">
+            <svg class="device-icon" viewBox="0 0 24 24"><path fill="#1d1d1f" d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+            <p>iPhone</p>
+          </a>
+          <a href="about:invalid#zCSafez" class="device-item">
+            <svg class="device-icon" viewBox="0 0 24 24"><path fill="#1d1d1f" d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2h-4zM4 5h16v11H4V5z"/></svg>
+            <p>Mac</p>
+          </a>
+          <a href="about:invalid#zCSafez" class="device-item">
+            <svg class="device-icon" viewBox="0 0 24 24"><path fill="#1d1d1f" d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 19c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7-4H5V5h14v12z"/></svg>
+            <p>iPad</p>
+          </a>
+          <a href="about:invalid#zCSafez" class="device-item">
+            <svg class="device-icon" viewBox="0 0 24 24"><path fill="#1d1d1f" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm2-5H10v2h4V2zm0 20H10v2h4v-2z"/></svg>
+            <p>Watch</p>
+          </a>
+          <a href="about:invalid#zCSafez" class="device-item">
+            <svg class="device-icon" viewBox="0 0 24 24"><path fill="#1d1d1f" d="M12 3c-4.97 0-9 4.03-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7c0-4.97-4.03-9-9-9z"/></svg>
+            <p>AirPods</p>
+          </a>
+          <a href="about:invalid#zCSafez" class="device-item">
+            <svg class="device-icon" viewBox="0 0 24 24"><path fill="#1d1d1f" d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            <p>More</p>
+          </a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 20px;">
+        <a href="#" style="color: #0066cc; text-decoration: none; font-size: 14px;">↑ Back to top</a>
+      </div>
+
+      <footer>
+        <small>©️ 2026 Apple Inc. or its affiliates.</small>
+        <div>
+          <a href="about:invalid#zCSafez" class="footer-phone-link">
+            <svg class="phone-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            +1 (855) 470-4290
+          </a>
+        </div>
+      </footer>
+    </div>
+</body>
+</html>
